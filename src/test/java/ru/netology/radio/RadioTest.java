@@ -8,21 +8,22 @@ public class RadioTest {
     @Test
     public void shouldIncreaseRadioStationMore() {
         Radio radio = new Radio ();
-        radio.setCurrentRadioStation(8);
+        radio.setCurrentRadioStation(5);
 
         radio.increaseNextRadioStation();
 
-        int expected = 9;
+        int expected = 6;
         int actual = radio.getCurrentRadioStation();
 
         Assertions.assertEquals(expected, actual);
 
     }
 
+
     @Test
-    public void shouldIncreaseRadioStationMore9() {
+    public void shouldIncreaseRadioStationNextEquals9() {
         Radio radio = new Radio ();
-        radio.setCurrentRadioStation(10);
+        radio.setCurrentRadioStation(9);
 
         radio.increaseNextRadioStation();
 
@@ -33,28 +34,16 @@ public class RadioTest {
 
     }
 
-    @Test
-    public void shouldIncreaseRadioStationEquals9() {
-        Radio radio = new Radio ();
-        radio.setCurrentRadioStation(9);
 
-        radio.increaseNextRadioStation();
-
-        int expected = 9;
-        int actual = radio.getCurrentRadioStation();
-
-        Assertions.assertEquals(expected, actual);
-
-    }
 
     @Test
     public void shouldIncreaseRadioStationLess() {
         Radio radio = new Radio ();
-        radio.setCurrentRadioStation(8);
+        radio.setCurrentRadioStation(5);
 
         radio.increasePrevRadioStation();
 
-        int expected = 7;
+        int expected = 4;
         int actual = radio.getCurrentRadioStation();
 
         Assertions.assertEquals(expected, actual);
@@ -83,6 +72,20 @@ public class RadioTest {
         radio.increasePrevRadioStation();
 
         int expected = 9;
+        int actual = radio.getCurrentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldIncreaseRadioStationEquals9() {
+        Radio radio = new Radio ();
+        radio.setCurrentRadioStation(9);
+
+        radio.increasePrevRadioStation();
+
+        int expected = 8;
         int actual = radio.getCurrentRadioStation();
 
         Assertions.assertEquals(expected, actual);
